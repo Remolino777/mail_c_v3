@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "src"
+version = "0.1.0"
+description = ""
+authors = ["Javier <7.matute@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+langchain = "^0.3.21"
+langgraph = "^0.3.16"
+langchain-core = "^0.3.45"
+langchain-community = "^0.3.20"
+langchain-google-genai = "^2.1.0"
+jupyter = "^1.1.1"
+python-dotenv = "^1.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

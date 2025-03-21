@@ -185,7 +185,7 @@ def handle_complaint(email_content: str) -> Dict[str, Any]:
     # Base template
     response = (
         "Thank you for reaching out to us. We sincerely apologize for the inconvenience you've experienced. "
-        "At Cadri, we take such matters seriously and are committed to resolving them promptly. "
+        "At [!!Company Name!!], we take such matters seriously and are committed to resolving them promptly. "
     )
     
     # Detect issue type for personalization
@@ -243,7 +243,7 @@ def handle_inquiry(email_content: str) -> str:
     
     # Base template
     response = (
-        "Thank you for your interest in our products and services at [Company Name]. "
+        "Thank you for your interest in our products and services at [!!Company Name!!]. "
         "We appreciate you taking the time to reach out to us. "
     )
     
@@ -301,7 +301,7 @@ def handle_support_request(email_content: str) -> dict:
     
     # Base template
     response = (
-        "Thank you for contacting Cadri Support. "
+        "Thank you for contacting [!!Company Name!!] Support. "
         "We're here to help you resolve any technical issues you're experiencing. "
     )
     
@@ -370,7 +370,7 @@ def handle_feedback(email_content: str) -> str:
     
     # Base template
     response = (
-        "Thank you for taking the time to share your feedback with Cadri. "
+        "Thank you for taking the time to share your feedback with [!!Company Name!!]. "
         "We genuinely appreciate hearing from our customers as it helps us improve our products and services. "
     )
     
@@ -429,10 +429,10 @@ def handle_other(email_content: str) -> str:
     # Extract potential name for personalization
     import re
     name_match = re.search(r'[Ff]rom:?\s*([A-Z][a-z]+(?:\s+[A-Z][a-z]+)?)|[Mm]y name is\s+([A-Z][a-z]+(?:\s+[A-Z][a-z]+)?)', email_content)
-    greeting = "Thank you for reaching out to Cadri. "
+    greeting = "Thank you for reaching out to [!!Company Name!!]. "
     if name_match:
         name = name_match.group(1) or name_match.group(2)
-        greeting = f"Hello {name},\n\nThank you for reaching out to Cadri. "
+        greeting = f"Hello {name},\n\nThank you for reaching out to [!!Company Name!!]. "
     
     # Dictionary of topic keywords and their corresponding responses
     topic_responses = {
@@ -492,11 +492,11 @@ def handle_other(email_content: str) -> str:
         "donation": {
             "keywords": ["donation", "charity", "fundraising", "nonprofit", "sponsor", "philanthropic"],
             "response": (
-                "Thank you for considering Cadri for your charitable initiative. "
+                "Thank you for considering [!!Company Name!!] for your charitable initiative. "
                 "We have a structured process for reviewing donation and sponsorship requests. "
-                "Please visit cadri.ai/community for information on our corporate social responsibility "
+                "Please visit [!!Company Name!!].ai/community for information on our corporate social responsibility "
                 "initiatives and the application process for charitable support. "
-                "Alternatively, you can email your proposal to cadri.community@company.com."
+                "Alternatively, you can email your proposal to [!!Company Name!!].community@company.com."
             )
         },
         "service_update": {
